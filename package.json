@@ -1,0 +1,40 @@
+{
+	"name": "simple-ext-viewer",
+	"description": "Simple code viewer extension for Near Social code",
+	"version": "0.0.1",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.74.0"
+	},
+	"main": "./out/extension.js",	
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:PreviewPanel.start"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "PreviewPanel.start",
+				"title": "Preview widget code in IDE browser",
+				"category": "NEAR Social Widget Preview Panel"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint \"src/**/*.ts\"",
+		"watch": "tsc -w -p ./"
+	},
+	"devDependencies": {
+		"@types/node": "^16.11.7",
+		"@types/vscode": "^1.73.0",
+		"@types/vscode-webview": "^1.57.0",
+		"@typescript-eslint/eslint-plugin": "^5.42.0",
+		"@typescript-eslint/parser": "^5.42.0",
+		"eslint": "^8.26.0",
+		"typescript": "^4.9.4"
+	}
+}
