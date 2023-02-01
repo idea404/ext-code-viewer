@@ -6,7 +6,7 @@
 	"engines": {
 		"vscode": "^1.74.0"
 	},
-	"main": "./out/extension.js",	
+	"main": "./out/extension.js",
 	"categories": [
 		"Other"
 	],
@@ -29,12 +29,20 @@
 		"watch": "tsc -w -p ./"
 	},
 	"devDependencies": {
+		"@types/bn.js": "^5.1.1",
 		"@types/node": "^16.11.7",
+		"@types/pg": "^8.6.6",
 		"@types/vscode": "^1.73.0",
 		"@types/vscode-webview": "^1.57.0",
 		"@typescript-eslint/eslint-plugin": "^5.42.0",
 		"@typescript-eslint/parser": "^5.42.0",
 		"eslint": "^8.26.0",
-		"typescript": "^4.9.4"
+		"typescript": "^4.8.4"
+	},
+	"dependencies": {
+		"bn.js": "^5.2.1",
+		"fs": "^0.0.1-security",
+		"near-api-js": "^1.1.0",
+		"pg": "^8.8.0"
 	}
 }
