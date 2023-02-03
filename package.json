@@ -11,12 +11,13 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:PreviewPanel.start"
+		"onCommand:NearSocial.start",
+		"onWebviewPanel:NearSocial.start"
 	],
 	"contributes": {
 		"commands": [
 			{
-				"command": "PreviewPanel.start",
+				"command": "NearSocial.start",
 				"title": "Preview widget code in IDE browser",
 				"category": "NEAR Social Widget Preview Panel"
 			}

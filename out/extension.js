@@ -25,20 +25,28 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.activate = void 0;
 const vscode = __importStar(require("vscode"));
-const getWebviewOptions_1 = require("./getWebviewOptions");
-const PreviewPanel_1 = require("./PreviewPanel");
+const helpers_1 = require("./helpers");
+const NearSocialViewer_1 = require("./NearSocialViewer");
 function activate(context) {
-    context.subscriptions.push(vscode.commands.registerCommand("PreviewPanel.start", () => {
-        PreviewPanel_1.PreviewPanel.createOrShow(context.extensionUri);
+    context.subscriptions.push(vscode.commands.registerCommand("NearSocial.start", () => {
+        NearSocialViewer_1.NearSocialViewer.createOrShow(context);
+    }));
+    context.subscriptions.push(vscode.commands.registerCommand("type", (args) => {
+        setTimeout(() => {
+            if (NearSocialViewer_1.NearSocialViewer.currentPanel) {
+                NearSocialViewer_1.NearSocialViewer.currentPanel.updateCode((0, helpers_1.getWidgetWithCode)());
+            }
+        }, 50);
+        return vscode.commands.executeCommand("default:type", args);
     }));
     if (vscode.window.registerWebviewPanelSerializer) {
         // Make sure we register a serializer in activation event
-        vscode.window.registerWebviewPanelSerializer(PreviewPanel_1.PreviewPanel.viewType, {
+        vscode.window.registerWebviewPanelSerializer(NearSocialViewer_1.NearSocialViewer.viewType, {
             async deserializeWebviewPanel(webviewPanel, state) {
                 console.log(`Got state: ${state}`);
                 // Reset the webview options so we use latest uri for `localResourceRoots`.
-                webviewPanel.webview.options = (0, getWebviewOptions_1.getWebviewOptions)(context.extensionUri);
-                PreviewPanel_1.PreviewPanel.revive(webviewPanel, context.extensionUri);
+                webviewPanel.webview.options = (0, helpers_1.getWebviewOptions)(context.extensionUri);
+                NearSocialViewer_1.NearSocialViewer.revive(webviewPanel, context);
             },
         });
     }

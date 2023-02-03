@@ -1,6 +1,7 @@
 # compiled output 
 /dist 
 /out-tsc 
+/out
 
 # dependencies 
 /node_modules 
