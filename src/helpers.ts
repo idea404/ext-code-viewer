@@ -1,5 +1,4 @@
 import * as vscode from "vscode";
-import { NETWORK } from "./config";
 
 let currentWidgetCode: string;
 
@@ -12,11 +11,6 @@ export function getWebviewOptions(extensionUri: vscode.Uri): vscode.WebviewOptio
     localResourceRoots: [vscode.Uri.joinPath(extensionUri, "media")],
   };
 }
-function getWidgetUrl(network: string) {
-  return network === "testnet"
-    ? "https://test.near.social/#/embed/test_alice.testnet/widget/remote-code?code="
-    : "https://near.social/#/embed/zavodil.near/widget/remote-code?code=";
-}
 
 export function alert(text: string) {
   vscode.window.showInformationMessage(text);
@@ -24,7 +18,7 @@ export function alert(text: string) {
 
 export function getWidgetWithCode(): string {
   currentWidgetCode = vscode.window.activeTextEditor?.document.getText() ?? "";
-  return getWidgetUrl(NETWORK) + encodeURIComponent(currentWidgetCode);
+  return currentWidgetCode;
 }
 
 export function getNonce(): string {
