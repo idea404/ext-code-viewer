@@ -1,8 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 import * as vscode from "vscode";
-import { getWebviewOptions, alert, getNonce, getWidgetWithCode } from "./helpers";
-
+import { alert, getNonce, getWebviewOptions, getWidgetWithCode } from "./helpers";
 
 export class NearSocialViewer {
   /**
