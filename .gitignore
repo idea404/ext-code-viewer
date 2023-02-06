@@ -2,6 +2,7 @@
 /dist 
 /out-tsc 
 /out
+/lib
 
 # dependencies 
 /node_modules 

@@ -1,1 +1,0 @@
-{"version":3,"file":"getWebviewOptions.js","sourceRoot":"","sources":["../src/getWebviewOptions.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;AAAA,+CAAiC;AAGjC,SAAgB,iBAAiB,CAAC,YAAwB;IACtD,OAAO;QACH,mCAAmC;QACnC,aAAa,EAAE,IAAI;QAEnB,2FAA2F;QAC3F,kBAAkB,EAAE,CAAC,MAAM,CAAC,GAAG,CAAC,QAAQ,CAAC,YAAY,EAAE,OAAO,CAAC,CAAC;KACnE,CAAC;AACN,CAAC;AARD,8CAQC"}
